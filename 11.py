@@ -2,18 +2,6 @@ from collections import namedtuple
 import math
 import sys
 
-BaseCoord = namedtuple("Coord", "i j")
-
-class Coord(BaseCoord):
-    def flip(self):
-        return Coord(-self.i, -self.j)
-
-    def __add__(self, o):
-        return Coord(self.i + o.i, self.j + o.j)
-
-    def get_manhattan_dist(self, o):
-        return math.fabs(self.i - o.i) + math.fabs(self.j - o.j)
-
 class Grid:
     def __init__(self, galaxies, dim):
         self.galaxies = galaxies
